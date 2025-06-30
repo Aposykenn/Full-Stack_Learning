@@ -14,7 +14,7 @@ function addNote(text = null) {
   let noteContainer = document.getElementById(category);
 
   let newNote = document.createElement("div");
-  newNote.className = "note";
+  newNote.className = `note ${category}`;
   newNote.innerText = note;
 
   newNote.addEventListener("click", function () {
@@ -28,9 +28,21 @@ function addNote(text = null) {
   saveToLocalStorage();
 }
 
+const categoryButtons = document.querySelectorAll("button[data-category]");
+categoryButtons.forEach(button => {
+  button.addEventListener("click", () => {
+    const category = button.getAttribute("data-category");
+    const notes = document.querySelectorAll(".note");
 
-let tabActive = document.querySelector("input[class='categories']:checked");
-
+    notes.forEach(note => {
+      if (note.classList.contains(category)) {
+        note.style.display = "block";
+      } else {
+        note.style.display = "none";
+      }
+    });
+  });
+});
 
 
 document.getElementById("delbuton").addEventListener("click", deleteAll);
@@ -46,7 +58,7 @@ function deleteAll() {
 }
 
 function saveToLocalStorage() {
-  const notes = { General: [], Daily: [], immportant: [] };
+  const notes = { General: [], Daily: [], important: [] };
 
   ["General", "Daily", "important"].forEach(id => {
     document.getElementById(id).querySelectorAll(".note").forEach(note => {
