@@ -36,7 +36,7 @@ let tabActive = document.querySelector("input[class='categories']:checked");
 document.getElementById("delbuton").addEventListener("click", deleteAll);
 
 function deleteAll() {
-  ["General", "Daily", "New"].forEach(id => {
+  ["General", "Daily", "important"].forEach(id => {
     const container = document.getElementById(id);
     while (container.firstChild) {
       container.removeChild(container.firstChild);
@@ -46,9 +46,9 @@ function deleteAll() {
 }
 
 function saveToLocalStorage() {
-  const notes = { General: [], Daily: [], New: [] };
+  const notes = { General: [], Daily: [], immportant: [] };
 
-  ["General", "Daily", "New"].forEach(id => {
+  ["General", "Daily", "important"].forEach(id => {
     document.getElementById(id).querySelectorAll(".note").forEach(note => {
       notes[id].push(note.innerText);
     });
@@ -62,7 +62,7 @@ function loadFromLocalStorage() {
   if (!saved) return;
 
   const notes = JSON.parse(saved);
-  ["General", "Daily", "New"].forEach(id => {
+  ["General", "Daily", "important"].forEach(id => {
     notes[id].forEach(text => {
       let categoryRadio = document.querySelector(`input[value="${id}"]`);
       categoryRadio.checked = true;
