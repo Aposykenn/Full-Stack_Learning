@@ -9,9 +9,17 @@
         <header>
 
         </header>
+        <div id="category">
+            <input type="button" class="categories" value="Daily">
+            <input type="button" class="categories" value="General">
+            <input type="button" class="categories" value="important">
+        </div>
         <div id="main-content">
-            <button id="buton">Add Note</button> <button id="delbuton">Delete All</button> <textarea id="text"></textarea>
-            <div id="noteContainer"></div>
+            <button id="buton">Add Note</button> <button id="delbuton">Delete All</button> <textarea id="text"></textarea> 
+            <input type="radio" class="category" name="category" value="Daily" checked> <input type="radio" class="category" name="category" value="General"> <input type="radio" class="category" name="category" value="important">
+            <div id="General" class="notecards"></div>
+            <div id="Daily" class="notecards"></div>
+            <div id="important" class="notecards"></div>
         </div>
         <script src="script.js"></script>
     </body>
