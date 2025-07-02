@@ -1,2 +1,7 @@
 # Full-Stack_Learning
-My Full-Stack learning process, examples, tests
+
+Here I'm learning and improving my JavaScript skills
+
+### Projects
+
+- Notepad: a basic note taking web app (properties: adding note, deleting and editing note, categorisation)
