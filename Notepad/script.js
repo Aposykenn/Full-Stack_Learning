@@ -16,8 +16,41 @@ function addNote(text = null) {
   let newNote = document.createElement("div");
   newNote.className = `note ${category}`;
   newNote.innerText = note;
+  
 
-  newNote.addEventListener("click", function () {
+  let newNoteC = document.createElement("button");
+  newNoteC.className = "dots";
+
+  const imgg = document.createElement("img");
+  imgg.className = "dots";
+  imgg.src = "images/3.svg";
+  newNoteC.appendChild(imgg);
+  newNote.appendChild(newNoteC);
+
+  newNoteC.addEventListener("click", function () {
+    let edit = document.createElement("textarea")
+    newNote.appendChild(edit)
+    edit.value = newNote.innerText
+    edit.addEventListener("keypress", function(e) {
+      if (e.key === "Enter") {
+        e.preventDefault();
+        newNote.innerText = edit.value
+        edit.remove()
+        saveToLocalStorage();
+      }
+    })
+  });
+
+  let newNoteD = document.createElement("button");
+  newNoteD.className = "bin";
+
+  const imgd = document.createElement("img");
+  imgd.className = "bin";
+  imgd.src = "images/bin.svg";
+  newNoteD.appendChild(imgd);
+  newNote.appendChild(newNoteD);
+
+  newNoteD.addEventListener("click", function () {
     newNote.remove();
     saveToLocalStorage();
   });

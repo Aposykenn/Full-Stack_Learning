@@ -1,5 +1,5 @@
 body {
-  background-color: #f0f0f0;
+  background-color: #DEDBD2;
   font-family: sans-serif;
   display: flex;
   flex-direction: column;
@@ -20,12 +20,54 @@ p {
   font-size: 20px;
 }
 
+#important {
+  color: #DEDBD2;
+  background-color: #788679;
+  border-radius: 10px;  
+}
+
+
+#general {
+  color: #4A5759;
+  background-color: #B0C4B1;
+  border-radius: 10px;  
+}
+
+#buton, #delbuton, #dail {
+  color: #DEDBD2;
+  background-color: #4A5759;
+  border-radius: 10px;
+}
+
 .note {
-  background-color: white;
-  border: 1px solid #ccc;
+  display: flex;
+  background-color: #F7E1D7;
+  border-radius: 10px;
   padding: 10px;
-  width: 200px;
+  width: 100%;
+  max-width: 200px;
   margin: 10px 0;
   box-shadow: 1px 1px 3px rgba(0,0,0,0.1);
 }
 
+.notecard {
+  text-align: left;
+  justify-content: right;
+}
+.bin {
+  margin-left: 0!important;
+}
+
+.dots , .bin {
+  border-radius: 10px;
+  display: inline-flex;
+  background-color: #EDAFB8;
+  padding: 2px 2px;
+}
+.dots img, .bin img {
+  box-sizing: content-box;
+  width: 20px;
+  height: 20px;
+  border: none;
+  background-color: transparent;
+}
