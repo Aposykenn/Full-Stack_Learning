@@ -15,7 +15,7 @@ function addNote(text = null) {
 
   let newNote = document.createElement("div");
   newNote.className = `note ${category}`;
-  newNote.className = `note`;
+  
   let textspan = document.createElement("span");
   textspan.innerText = note;
   newNote.appendChild(textspan);
