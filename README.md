@@ -1,4 +1,4 @@
-# Full-Stack_Learning
+# JavaScript Learning
 
 Here I'm learning and improving my JavaScript skills
 
