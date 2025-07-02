@@ -1,5 +1,5 @@
 document.getElementById("buton").addEventListener("click", () => addNote());
-document.getElementById("text").addEventListener("keypress", function(e) {
+document.getElementById("text").addEventListener("keypress", function (e) {
   if (e.key === "Enter") {
     e.preventDefault();
     addNote();
@@ -15,11 +15,11 @@ function addNote(text = null) {
 
   let newNote = document.createElement("div");
   newNote.className = `note ${category}`;
-  
+
   let textspan = document.createElement("span");
   textspan.innerText = note;
   newNote.appendChild(textspan);
-  
+
 
   let newNoteC = document.createElement("button");
   newNoteC.className = "dots";
@@ -28,13 +28,12 @@ function addNote(text = null) {
   imgg.className = "dots";
   imgg.src = "images/3.svg";
   newNoteC.appendChild(imgg);
-  newNote.appendChild(newNoteC);
 
   newNoteC.addEventListener("click", function () {
     let edit = document.createElement("textarea")
     newNote.appendChild(edit)
     edit.value = newNote.innerText
-    edit.addEventListener("keypress", function(e) {
+    edit.addEventListener("keypress", function (e) {
       if (e.key === "Enter") {
         e.preventDefault();
         newNote.innerText = edit.value
@@ -51,18 +50,24 @@ function addNote(text = null) {
   imgd.className = "bin";
   imgd.src = "images/bin.svg";
   newNoteD.appendChild(imgd);
-  newNote.appendChild(newNoteD);
 
   newNoteD.addEventListener("click", function () {
     newNote.remove();
     saveToLocalStorage();
   });
 
+  let actions = document.createElement("div");
+  actions.className = "actions";
+  actions.appendChild(newNoteC);
+  actions.appendChild(newNoteD);
+  newNote.appendChild(actions);
+
   noteContainer.appendChild(newNote);
   document.getElementById("text").value = "";
 
   saveToLocalStorage();
 }
+
 
 const categoryButtons = document.querySelectorAll("button[data-category]");
 categoryButtons.forEach(button => {
@@ -118,5 +123,12 @@ function loadFromLocalStorage() {
     });
   });
 }
+
+let actions = document.createElement("div");
+actions.className = "actions";
+actions.appendChild(newNoteC);
+actions.appendChild(newNoteD);
+newNote.appendChild(actions);
+
 
 loadFromLocalStorage();

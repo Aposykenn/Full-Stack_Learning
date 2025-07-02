@@ -59,7 +59,8 @@ span {
 }
 
 .dots , .bin {
-  
+  width: 34px;
+  height: 34px;
   border-radius: 10px;
   background-color: #EDAFB8;
   padding: 2px 2px;
