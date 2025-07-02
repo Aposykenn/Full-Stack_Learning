@@ -77,7 +77,7 @@ categoryButtons.forEach(button => {
 
     notes.forEach(note => {
       if (note.classList.contains(category)) {
-        note.style.display = "block";
+        note.style.display = "flex";
       } else {
         note.style.display = "none";
       }
