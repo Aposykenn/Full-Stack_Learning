@@ -36,7 +36,7 @@ function addNote(text = null) {
     edit.addEventListener("keypress", function (e) {
       if (e.key === "Enter") {
         e.preventDefault();
-        newNote.innerText = edit.value
+        textspan.innerText = edit.value;
         edit.remove()
         saveToLocalStorage();
       }

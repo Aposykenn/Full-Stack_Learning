@@ -43,6 +43,7 @@ p {
 
 .note {
   box-sizing: border-box;
+  align-items: center;
   display: flex;
   background-color: #F7E1D7;
   border-radius: 10px;
@@ -56,6 +57,12 @@ p {
 span {
   text-align: justify;
   margin-right: auto; 
+}
+
+.actions {
+  margin-left: auto; 
+  display: flex; 
+  gap: 4px;
 }
 
 .dots , .bin {
