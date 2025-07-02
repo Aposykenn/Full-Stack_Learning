@@ -124,11 +124,4 @@ function loadFromLocalStorage() {
   });
 }
 
-let actions = document.createElement("div");
-actions.className = "actions";
-actions.appendChild(newNoteC);
-actions.appendChild(newNoteD);
-newNote.appendChild(actions);
-
-
 loadFromLocalStorage();
